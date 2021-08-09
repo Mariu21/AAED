@@ -198,7 +198,25 @@ public class App {
     }
 
 
+    public void otraBusqueda() {
 
+        Scanner sc = new Scanner(System.in);
+
+        String respuesta;
+
+        do {
+            System.out.println("¿Quiere realizar otra búsqueda? (S/N)");
+            respuesta = sc.nextLine();
+
+            if (respuesta.equalsIgnoreCase("S")) {
+                menuMostrar();
+            } else if (respuesta.equalsIgnoreCase("N")) {
+                menuPrincipal();
+            }
+        } while (!respuesta.equalsIgnoreCase("S") && !respuesta.equalsIgnoreCase("N"));
+
+
+    }
 
 
 }

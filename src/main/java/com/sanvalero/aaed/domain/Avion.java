@@ -105,6 +105,8 @@ public class Avion {
         return modelo.concat(compania).concat(numSerie).hashCode();
     }
 
+
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -125,5 +127,3 @@ public class Avion {
         }
         return true;
     }
-
-}
