@@ -196,47 +196,7 @@ public class App {
         System.out.println("Los datos han sido guardados correctamente.");
 
     }
-    private void menuMostrar() {
 
-        Scanner sc = new Scanner(System.in);
-
-        while (true) {
-            System.out.println("");
-            System.out.println("******** MOSTRAR ********");
-            System.out.println("*********************************");
-
-            System.out.println("MOSTRAR UNA OPCIÓN: ");
-            System.out.println("1. Pasajero");
-            System.out.println("2. Avión");
-            System.out.println("3. Vuelo");
-            System.out.println("4. Volver al menú principal");
-
-            String opcion = teclado.nextLine();
-
-            switch (opcion) {
-
-                case ("1"):
-                    mostrarPasajero();
-                    System.out.println("\n");
-                    break;
-
-                case ("2"):
-                    mostrarAvion();
-                    System.out.println("\n");
-                    break;
-                case ("3"):
-                    mostrarVuelo();
-                    System.out.println("\n");
-                    break;
-
-                case ("4"):
-                    menuPrincipal();
-                    break;
-            }
-
-        }
-
-    }
 
 
 
