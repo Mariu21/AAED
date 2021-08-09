@@ -3,7 +3,6 @@ package com.sanvalero.aaed.domain;
 import java.util.Objects;
 
 public class Avion {
-
     String modelo;
     String numSerie;
     String compania;
@@ -105,6 +104,8 @@ public class Avion {
     public int hashCode() {
         return modelo.concat(compania).concat(numSerie).hashCode();
     }
+
+
 
     @Override
     public boolean equals(Object obj) {
