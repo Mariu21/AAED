@@ -1,8 +1,7 @@
 package com.sanvalero.aaed.domain;
 
+
 import java.util.Objects;
-
-
 
 public class Pasajero {
     String nombre;
@@ -116,8 +115,6 @@ public class Pasajero {
         if (!(o instanceof Pasajero)) return false;
         Pasajero pasajero = (Pasajero) o;
         return Objects.equals(getDni(), pasajero.getDni());
-
-
     }
 
     @Override

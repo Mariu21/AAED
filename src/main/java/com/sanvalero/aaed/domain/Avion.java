@@ -10,18 +10,18 @@ public class Avion {
     float combustible;
     float pesoavion;
 
-
+    Vuelo vuelo;
 
 
     public Avion(String modelo, String numSerie,String compania, int asiento,
-                 float combustible, float pesoavion) {
+                 float combustible, float pesoavion, vuelo) {
         this.modelo = modelo;
         this.numSerie = numSerie;
         this.compania = compania;
         this.asiento = asiento;
         this.combustible = combustible;
         this.pesoavion = pesoavion;
-
+        this.vuelo = vuelo;
     }
 
 
@@ -78,6 +78,12 @@ public class Avion {
 
     }
 
+    public Vuelo getVuelo() {
+                return vuelo;
+            }
+
+            public void setVuelo(Vuelo vuelo) {
+                this.vuelo = vuelo;
 
 
     @Override
