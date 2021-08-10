@@ -10,6 +10,7 @@ public class Avion {
     float combustible;
     float pesoavion;
 
+    Vuelo vuelo;
 
 
     public Avion(String modelo, String numSerie,String compania, int asiento,
@@ -21,6 +22,8 @@ public class Avion {
         this.combustible = combustible;
         this.pesoavion = pesoavion;
     }
+
+
 
 
     public String getModelo() {
@@ -98,6 +101,7 @@ public class Avion {
         return modelo.concat(compania).concat(numSerie).hashCode();
     }
 
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -119,4 +123,23 @@ public class Avion {
         return true;
     }
 
-}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Avion other = (Avion) obj;
+        if (!Objects.equals(this.modelo, other.modelo)) {
+            return false;
+        }
+        if (!Objects.equals(this.numSerie, other.numSerie)) {
+            return false;
+        }
+        return true;
+    }

@@ -1,4 +1,7 @@
 package com.sanvalero.aaed.domain;
+import java.util.Objects;
+
+import java.util.Objects;
 
 import java.util.Objects;
 
@@ -10,6 +13,8 @@ public class Vuelo {
     String horario;
     float km;
     int escala ;
+    
+
 
 
     public Vuelo(String nvuelo, String origen,String destino, String fecha,
@@ -120,8 +125,6 @@ public class Vuelo {
 
     @Override
     public int hashCode() {
-
         return nvuelo.hashCode();
     }
 
-}
