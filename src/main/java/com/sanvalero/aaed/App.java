@@ -238,6 +238,90 @@ public class App {
 
     }
 
+    private void mostrarPasajero() {
+
+        Scanner sc = new Scanner(System.in);
+
+        int posicion;
+
+        System.out.print("Introduce el DNI del pasajero: ");
+        String dni = sc.nextLine();
+
+        for (Pasajero pasajero : pasajeroArrayList) {
+            if (pasajero.getDni().equalsIgnoreCase(dni)) {
+                posicion = pasajeroArrayList.indexOf(pasajero);
+                System.out.println(pasajeroArrayList.get(posicion));
+
+                otraBusqueda();
+            } else {
+                menuPrincipal();
+            }
+        }
+
+    }
+
+    private void mostrarAvion() {
+
+        Scanner sc = new Scanner(System.in);
+
+        int posicion;
+
+        System.out.print("Introduce el número de serie del avión:  ");
+        String numSerie = sc.nextLine();
+
+        for (Avion avion : avionArraytList) {
+            if (avion.getNumSerie().equalsIgnoreCase(numSerie)) {
+                posicion = avionArraytList.indexOf(avion);
+                System.out.println(avionArraytList.get(posicion));
+
+                otraBusqueda();
+            } else {
+                menuPrincipal();
+            }
+        }
+
+    }
+
+    private void mostrarVuelo() {
+
+        Scanner sc = new Scanner(System.in);
+
+        int posicion;
+
+        System.out.print("Introduce el número de vuelo:  ");
+        String nvuelo = sc.nextLine();
+
+        for (Vuelo vuelo : vueloArrayList) {
+            if (vuelo.getNvuelo().equalsIgnoreCase(nvuelo)) {
+                posicion = vueloArrayList.indexOf(vuelo);
+                System.out.println(vueloArrayList.get(posicion));
+
+                otraBusqueda();
+            } else {
+                menuPrincipal();
+            }
+        }
+    }
+
+    public void otraBusqueda() {
+
+        Scanner sc = new Scanner(System.in);
+
+        String respuesta;
+
+        do {
+            System.out.println("¿Quiere realizar otra búsqueda? (S/N)");
+            respuesta = sc.nextLine();
+
+            if (respuesta.equalsIgnoreCase("S")) {
+                menuMostrar();
+            } else if (respuesta.equalsIgnoreCase("N")) {
+                menuPrincipal();
+            }
+        } while (!respuesta.equalsIgnoreCase("S") && !respuesta.equalsIgnoreCase("N"));
+
+
+    }
 
 
 
