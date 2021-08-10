@@ -10,10 +10,10 @@ public class Avion {
     float combustible;
     float pesoavion;
 
-    Vuelo vuelo;
 
 
-    public Avion(String modelo, String numSerie, String compania, int asiento,
+
+    public Avion(String modelo, String numSerie,String compania, int asiento,
                  float combustible, float pesoavion) {
         this.modelo = modelo;
         this.numSerie = numSerie;
@@ -21,7 +21,7 @@ public class Avion {
         this.asiento = asiento;
         this.combustible = combustible;
         this.pesoavion = pesoavion;
-        this.vuelo = vuelo;
+
     }
 
 
@@ -32,7 +32,6 @@ public class Avion {
     public void setModelo(String modelo) {
         this.modelo = modelo;
 
-    }
 
     public String getNumSerie() {
         return numSerie;
@@ -40,8 +39,6 @@ public class Avion {
 
     public void setNumSerie(String numSerie) {
         this.numSerie = numSerie;
-
-    }
 
 
     public String getCompania() {
@@ -81,13 +78,6 @@ public class Avion {
 
     }
 
-    public Vuelo getVuelo() {
-        return vuelo;
-    }
-
-    public void setVuelo(Vuelo vuelo) {
-        this.vuelo = vuelo;
-    }
 
 
     @Override
@@ -115,5 +105,4 @@ public class Avion {
         return Objects.equals(getNumSerie(), avion.getNumSerie());
     }
 }
-
 

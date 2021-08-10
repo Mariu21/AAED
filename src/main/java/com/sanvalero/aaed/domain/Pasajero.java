@@ -2,6 +2,8 @@ package com.sanvalero.aaed.domain;
 
 import java.util.Objects;
 
+
+
 public class Pasajero {
     String nombre;
     String apellido;
@@ -10,6 +12,7 @@ public class Pasajero {
     String email;
     int equipaje;
     float pesoequipaje;
+
 
     Vuelo vuelo;
 
@@ -26,7 +29,6 @@ public class Pasajero {
 
 
     }
-
 
 
     public String getNombre() {
@@ -85,6 +87,7 @@ public class Pasajero {
         this.pesoequipaje = pesoequipaje;
     }
 
+
     public Vuelo getVuelo() {
         return vuelo;
     }
@@ -106,29 +109,20 @@ public class Pasajero {
                 + '}';
     }
 
+
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pasajero)) return false;
+        Pasajero pasajero = (Pasajero) o;
+        return Objects.equals(getDni(), pasajero.getDni());
 
-        final Pasajero other = (Pasajero) obj;
-        if (!Objects.equals(this.dni, other.dni)) {
-            return false;
-        }
-        return true;
+
     }
-
-
 
     @Override
     public int hashCode() {
-
         return dni.hashCode();
     }
-
 
 }
