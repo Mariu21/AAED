@@ -124,8 +124,10 @@ public class App {
         float pesoequipaje = sc.nextFloat();
 
 
-        Pasajero pasajero = new Pasajero(nombre, apellido, edad, dni, email,
-                equipaje, pesoequipaje);
+       /* Pasajero pasajero = new Pasajero(nombre, apellido, dni, edad, email,
+                equipaje, pesoequipaje);*/
+
+        Pasajero pasajero = new Pasajero (nombre, apellido, edad, dni, email, equipaje, pesoequipaje);
 
         pasajeroArrayList.add(pasajero);
 
@@ -198,25 +200,48 @@ public class App {
     }
 
 
-    public void otraBusqueda() {
+    private void menuMostrar() {
 
         Scanner sc = new Scanner(System.in);
 
-        String respuesta;
+        while (true) {
+            System.out.println("");
+            System.out.println("******** MOSTRAR ********");
+            System.out.println("*********************************");
 
-        do {
-            System.out.println("¿Quiere realizar otra búsqueda? (S/N)");
-            respuesta = sc.nextLine();
+            System.out.println("MOSTRAR UNA OPCIÓN: ");
+            System.out.println("1. Pasajero");
+            System.out.println("2. Avión");
+            System.out.println("3. Vuelo");
+            System.out.println("4. Volver al menú principal");
 
-            if (respuesta.equalsIgnoreCase("S")) {
-                menuMostrar();
-            } else if (respuesta.equalsIgnoreCase("N")) {
-                menuPrincipal();
+            String opcion = teclado.nextLine();
+
+            switch (opcion) {
+
+                case ("1"):
+                    mostrarPasajero();
+                    System.out.println("\n");
+                    break;
+
+                case ("2"):
+                    mostrarAvion();
+                    System.out.println("\n");
+                    break;
+                case ("3"):
+                    mostrarVuelo();
+                    System.out.println("\n");
+                    break;
+
+                case ("4"):
+                    menuPrincipal();
+                    break;
             }
-        } while (!respuesta.equalsIgnoreCase("S") && !respuesta.equalsIgnoreCase("N"));
 
+        }
 
     }
+
 
     private void mostrarPasajero() {
 
