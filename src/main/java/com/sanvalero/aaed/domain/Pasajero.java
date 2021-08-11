@@ -13,21 +13,23 @@ public class Pasajero {
     float pesoequipaje;
 
 
-    Vuelo vuelo;
 
 
-    public Pasajero(String nombre, String apellido, int edad, String dni,
-                    String email, int equipaje, float pesoequipaje) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-        this.dni = dni;
-        this.email = email;
-        this.equipaje = equipaje;
-        this.pesoequipaje = pesoequipaje;
+
+    public Pasajero(String nombre, String apellido, int edad, String dni, String email, int equipaje, float pesoequipaje) {
+     this.nombre= nombre;
+     this.apellido = apellido;
+     this.edad = edad;
+     this.dni= dni;
+     this.email = email;
+     this.equipaje = equipaje;
+     this.pesoequipaje = pesoequipaje;
+
 
 
     }
+
+
 
 
     public String getNombre() {
@@ -46,6 +48,15 @@ public class Pasajero {
         this.apellido = apellido;
     }
 
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+
     public String getDni() {
         return dni;
     }
@@ -60,14 +71,6 @@ public class Pasajero {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
     }
 
     public int getEquipaje() {
@@ -87,25 +90,19 @@ public class Pasajero {
     }
 
 
-    public Vuelo getVuelo() {
-        return vuelo;
-    }
-
-    public void setVuelo(Vuelo vuelo) {
-        this.vuelo = vuelo;
-    }
-
 
     @Override
     public String toString() {
-        return "Pasajero{"
-                + "Nombre='" + nombre + '\''
-                + ", Apellidos='" + apellido + '\''
-                + ", DNI='" + dni + '\''
-                + ", Email='" + email + '\''
-                + ", Nº de maletas='" + equipaje + '\''
-                + ", Peso del equipaje=" + pesoequipaje + "litros"
-                + '}';
+        return "Pasajero{"+
+                "Nombre='" + nombre + '\''+
+                ", Apellidos='" + apellido + '\''+
+                ", Edad" +
+                "='" + edad + '\''+
+                ", DNI='" + dni + '\''+
+                ", Email='" + email + '\''+
+                ", Nº de maletas='" + equipaje + '\''+
+                ", Peso del equipaje=" + pesoequipaje + "litros"+
+                '}';
     }
 
 
