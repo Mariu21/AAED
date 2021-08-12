@@ -1,0 +1,3 @@
+sonar.projectKey=AAED
+sonar.sources=.
+sonar.java.binaries=target/classes
