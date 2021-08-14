@@ -8,17 +8,7 @@
     <artifactId>AAED</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <profiles>
-        <profile>
-            <id>sonarqube</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <sonar.host.url>http://192.168.1.36</sonar.host.url>
-            </properties>
-        </profile>
-    </profiles>
+
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
@@ -26,42 +16,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
     <dependencies>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.12.0</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.0.1</version>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.3.0</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-            <version>1.6.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.6.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.6.0</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
     <build>
-
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -71,12 +35,11 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2-beta-5</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -86,7 +49,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.sanvalero.aaed.Aplicacion</mainClass>
+                                    <mainClass>com.sanvalero.aaed.Application</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
@@ -96,33 +59,11 @@
                     </execution>
                 </executions>
             </plugin>
-
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-
-
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-                <configuration>
-                    <runOrder>alphabetical</runOrder>
-                    <useSystemClassLoader>false</useSystemClassLoader>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.22.2</version>
-            </plugin>
-       </plugins>
-
+        </plugins>
     </build>
+
+
+
+
 
 </project>
